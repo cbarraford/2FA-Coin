@@ -105,7 +105,7 @@ This transaction does require a new transaction input format (see below).
 Committing this transaction by itself would not actually trigger the funds to
 transfer, as a separate confirmation transaction in a separate block is also
 required. Adding these transactions to the blockchain does NOT generate funds
-to a miner (see Mining Fee below).
+to a miner (or validator) (see Transaction Fees below).
 
  2) The miner (or validator) before committing the transfer transaction to the
 blockchain generates a one time use private/public key along with a
@@ -150,7 +150,7 @@ wallet we are sending from has enough funds in it to send the amount of funds.
 The new input format now requires only confirmation transactions (which are
 linked already to their transfer transactions).
 
-### Mining Fees
+### Transaction Fees
 
 Transaction fees only apply to confirmation transactions. This way expired
 transactions don't cause the wallet owner anything (ie a hacker cannot steal a

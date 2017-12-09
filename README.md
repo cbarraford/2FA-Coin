@@ -87,7 +87,7 @@ up and vanishes all of a sudden they don't loose all of their funds.
 This email address can be any email address. It can be your personal email
 address or you can create a special address just for this wallet purpose. This
 would help in maintaining anonymity. One approach could be creating a new
-protonmail.com address that is <public key>@protonmail.com (the max length of
+protonmail.com address that is public_key@protonmail.com (the max length of
 an email username is 256 characters).
 
 It is highly recommended that you secure this email with 2FA and a strong

@@ -2,7 +2,8 @@
 ========
 This is a specification for implementing a cryptocurrency that enforces two
 factor authentication for any transactions. This would better secure an
-individual or enterprise's funds from theft.
+individual or enterprise's funds from theft. This is NOT intended to be its
+own coin, but rather a feature implementation spec for another coin.
 
 ## What is Two-Factor Authentication?
 Two-factor authentication (also known as 2FA) is a method of confirming a
@@ -88,7 +89,10 @@ This email address can be any email address. It can be your personal email
 address or you can create a special address just for this wallet purpose. This
 would help in maintaining anonymity. One approach could be creating a new
 protonmail.com address that is public_key@protonmail.com (the max length of
-an email username is 256 characters).
+an email username is 256 characters). The nice thing about this is if the
+miner (or validator) and the wallet owner both have a protonmail account, you
+get end-to-end encryption with your message. Not to mention that service also
+automatically deletes the email after a specified period ( lets say an hour).
 
 It is highly recommended that you secure this email with 2FA and a strong
 password.
@@ -123,8 +127,9 @@ a transfer transaction. Even if the miner (or validator) had the wallet owner
 private key, it still be extremely difficult to self sign (see Separated
 Transactions and Expiration below).
 
- 4) Once the miner gets the signed ID from the wallet owner, they commit a
-confirmation transaction. Transfer complete.
+ 4) Once the miner gets both signed IDs from the wallet owner and validates
+everything to be correct, they commit a confirmation transaction. Transfer
+complete.
 
 Optionally, you could require more than one confirmation transaction which
 would increase security but have draw backs as well.

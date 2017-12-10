@@ -97,6 +97,9 @@ automatically deletes the email after a specified period ( lets say an hour).
 It is highly recommended that you secure this email with 2FA and a strong
 password.
 
+An added benefit of this is you could send funds to an email address instead
+of a public key (assuming we enforce email uniqueness in the blockchain).
+
 ## Two Transactions for One Transfer
 In a 2FA transaction blockchain, each transfer requires two transactions 
 on the blockchain. Here is what that workflow would look like...

@@ -104,28 +104,27 @@ on the blockchain. Here is what that workflow would look like...
 ### Workflow
 
  1) A wallet owner submits a transfer transaction to be committed to the
-blockchain. This contains the amount of funds and destination (public key).
-This transaction does require a new transaction input format (see below).
-Committing this transaction by itself would not actually trigger the funds to
-transfer, as a separate confirmation transaction in a separate block is also
-required. Adding these transactions to the blockchain does NOT generate funds
-to a miner (or validator) (see Transaction Fees below).
+blockchain. This contains the amount of funds and destination (public key)
+(almost the same as a transaction on bitcoin today).  This transaction does
+require a new transaction input format (see below).  Committing this
+transaction by itself would not actually trigger the funds to transfer, as a
+separate confirmation transaction in a separate block is also required. Adding
+these transactions to the blockchain does NOT generate funds to the miner (or
+validator) (see Transaction Fees below).
 
  2) The miner (or validator) before committing the transfer transaction to the
 blockchain generates a one time use private/public key along with a
 transaction ID to be signed by the wallet owner. The block is then committed
 with the transaction ID and the one time use public key. An email is sent to
 the wallet owner with the private and transaction ID. This email should use
-[hashcash](http://www.hashcash.org/) to protect spamming (the email provider
-could, in theory, drop any email that does not show proof of work, hence
-protecting from spamming activity).
+[hashcash](http://www.hashcash.org/) to protect spamming.
 
- 3) The wallet owner signs the ID with the one time use private key and with their
-own permanent private key and submits it to be a confirmation transaction.
-By signing twice, it ensures that the miner (or validator) cannot self confirm
-a transfer transaction. Even if the miner (or validator) had the wallet owner
-private key, it still be extremely difficult to self sign (see Separated
-Transactions and Expiration below).
+ 3) The wallet owner signs the ID with the one time use private key and with
+their own permanent private key and submits it to be a confirmation
+transaction.  By signing twice, it ensures that the miner (or validator)
+cannot self confirm a transfer transaction. Even if the miner (or validator)
+had the wallet owner's private key, it still be extremely difficult to self
+sign (see Separated Transactions and Expiration below).
 
  4) Once the miner gets both signed IDs from the wallet owner and validates
 everything to be correct, they commit a confirmation transaction. Transfer
